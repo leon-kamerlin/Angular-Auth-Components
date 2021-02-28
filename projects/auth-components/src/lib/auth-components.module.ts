@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { FieldRequiredModule } from 'leon-angular-utils';
 import { TranslateModule } from '@ngx-translate/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -28,7 +29,9 @@ import { TranslateModule } from '@ngx-translate/core';
     MatButtonModule,
     RouterModule,
     FieldRequiredModule,
-    TranslateModule,
+    TranslateModule.forRoot(),
+    RouterModule.forRoot([]),
+    BrowserAnimationsModule
   ],
   exports: [
     AuthComponentsComponent,

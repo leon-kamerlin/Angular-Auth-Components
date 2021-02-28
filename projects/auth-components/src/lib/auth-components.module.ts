@@ -1,41 +1,39 @@
 import { NgModule } from '@angular/core';
 import { AuthComponentsComponent } from './auth-components.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FieldRequiredModule } from 'leon-angular-utils';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { CommonModule } from '@angular/common';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterModule } from '@angular/router';
-import { FieldRequiredModule } from 'leon-angular-utils';
-import { TranslateModule } from '@ngx-translate/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
   declarations: [
-    AuthComponentsComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    AuthComponentsComponent
   ],
   imports: [
-    MatCardModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
     CommonModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    RouterModule,
     FieldRequiredModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot(),
     RouterModule.forRoot([]),
-    BrowserAnimationsModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatButtonModule,
+    MatCheckboxModule
   ],
   exports: [
-    AuthComponentsComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    AuthComponentsComponent
   ]
 })
 export class AuthComponentsModule {

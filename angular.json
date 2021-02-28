@@ -68,6 +68,7 @@
               "projects/auth-components-example/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/auth-components-example/src/styles.scss"
             ],
             "scripts": []
@@ -132,6 +133,7 @@
               "projects/auth-components-example/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/auth-components-example/src/styles.scss"
             ],
             "scripts": []
@@ -163,7 +165,8 @@
           }
         }
       }
-    }},
+    }
+  },
   "cli": {
     "analytics": "ecb0acfc-1d18-4f0f-a1e7-4ac5a49c228c"
   },

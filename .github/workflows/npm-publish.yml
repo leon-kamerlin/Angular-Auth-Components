@@ -31,6 +31,7 @@ jobs:
         run: |
           npm install -g npm-install-peers
           cd projects/auth-components
+          npm install
           npm-install-peers
           cd ../../
           npm ci

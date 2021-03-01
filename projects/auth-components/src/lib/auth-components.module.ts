@@ -11,12 +11,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { ResetPasswordFormComponent } from './reset-password-form/reset-password-form.component';
 
 
 @NgModule({
   declarations: [
     LoginFormComponent,
-    AuthComponentsComponent
+    RegisterFormComponent,
+    ResetPasswordFormComponent,
+    AuthComponentsComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +37,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   ],
   exports: [
     LoginFormComponent,
+    RegisterFormComponent,
+    ResetPasswordFormComponent,
     AuthComponentsComponent
   ]
 })

@@ -1,6 +1,6 @@
 {
   "name": "angular-auth-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^9.1.13",
     "@angular/core": "^9.1.13",
@@ -11,6 +11,7 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "leon-angular-utils": "^0.0.3",
+    "ng2-validation": "^4.2.0",
     "@angular/material": "~9.2.1",
     "@angular/platform-browser": "~9.1.4",
     "@angular/platform-browser-dynamic": "~9.1.4",

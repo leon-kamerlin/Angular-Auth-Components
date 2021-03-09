@@ -24,7 +24,7 @@ import { ResetPasswordFormComponent } from './reset-password-form/reset-password
     CommonModule,
     FieldRequiredModule,
     ReactiveFormsModule,
-    TranslateModule.forRoot(),
+    TranslateModule,
     RouterModule,
     MatCardModule,
     MatFormFieldModule,

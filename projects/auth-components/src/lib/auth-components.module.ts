@@ -15,29 +15,29 @@ import { ResetPasswordFormComponent } from './reset-password-form/reset-password
 
 
 @NgModule({
-  declarations: [
-    LoginFormComponent,
-    RegisterFormComponent,
-    ResetPasswordFormComponent,
-  ],
-  imports: [
-    CommonModule,
-    FieldRequiredModule,
-    ReactiveFormsModule,
-    TranslateModule,
-    RouterModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatButtonModule,
-    MatCheckboxModule
-  ],
-  exports: [
-    LoginFormComponent,
-    RegisterFormComponent,
-    ResetPasswordFormComponent,
-  ]
+    declarations: [
+        LoginFormComponent,
+        RegisterFormComponent,
+        ResetPasswordFormComponent,
+    ],
+    imports: [
+        CommonModule,
+        FieldRequiredModule,
+        ReactiveFormsModule,
+        TranslateModule,
+        RouterModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatButtonModule,
+        MatCheckboxModule
+    ],
+    exports: [
+        LoginFormComponent,
+        RegisterFormComponent,
+        ResetPasswordFormComponent,
+    ]
 })
 export class AuthComponentsModule {
 }

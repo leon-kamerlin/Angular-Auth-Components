@@ -13,14 +13,14 @@ export class ResetPasswordFormComponent implements OnInit {
     form: FormGroup;
 
     constructor(private fb: FormBuilder) {
-    }
-
-    ngOnInit() {
         this.form = this.fb.group({
             email: [
                 null, Validators.compose([Validators.required, CustomValidators.email])
             ]
         });
+    }
+
+    ngOnInit() {
     }
 
 

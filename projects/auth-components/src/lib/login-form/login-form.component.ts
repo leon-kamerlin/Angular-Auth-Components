@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 export interface LoginData {
     email: string;
@@ -18,15 +19,15 @@ export class LoginFormComponent implements OnInit {
     @Output()
     submitted: EventEmitter<LoginData> = new EventEmitter<LoginData>();
 
-    constructor(private fb: FormBuilder) {
-    }
-
-    ngOnInit() {
+    constructor(private fb: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute) {
         this.form = this.fb.group({
             email: [null, Validators.compose([Validators.required])],
             password: [null, Validators.compose([Validators.required])],
             stayLoggedIn: [false, Validators.required]
         });
+    }
+
+    ngOnInit() {
     }
 
     get email(): FormControl {
@@ -40,5 +41,4 @@ export class LoginFormComponent implements OnInit {
     get stayLoggedIn(): FormControl {
         return this.form.get('stayLoggedIn') as FormControl;
     }
-
 }

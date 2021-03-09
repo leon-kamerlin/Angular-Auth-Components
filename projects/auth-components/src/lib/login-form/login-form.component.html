@@ -40,8 +40,8 @@
                         [disabled]="!form.valid">{{'login' | translate}}</button>
             </div>
             <div class="text-center">
-                <a [routerLink]="['/en/auth/reset-password']">{{'forgotPassword' | translate}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a [routerLink]="['/en/auth/register']">{{'signupForNewAccount' | translate}}</a>
+                <a [routerLink]="['../reset-password']">{{'forgotPassword' | translate}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a [routerLink]="['../register']">{{'signupForNewAccount' | translate}}</a>
             </div>
         </form>
     </mat-card-content>

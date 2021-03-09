@@ -6,7 +6,7 @@
             <div class="d-flex flex-column align-items-stretch pb-2">
 
                 <!--Email-->
-                <div class="pb-2">
+                <div>
                     <mat-form-field>
                         <mat-label>{{'email' | translate}} {{email | fieldRequired}}</mat-label>
                         <input matInput placeholder="Email address" type="email"
@@ -21,7 +21,7 @@
                 </div>
 
                 <!--Password-->
-                <div class="pb-2">
+                <div>
                     <mat-form-field>
                         <mat-label>{{'password' | translate}} {{password | fieldRequired}}</mat-label>
                         <input matInput type="password" placeholder="Password"
@@ -33,7 +33,7 @@
                 </div>
 
                 <!--Confirm Password-->
-                <div class="pb-2">
+                <div>
                     <mat-form-field>
                         <mat-label>Confirm password {{confirmPassword | fieldRequired}}</mat-label>
                         <input matInput placeholder="Confirm Password"
@@ -57,9 +57,9 @@
                     your account
                 </button>
             </div>
-            <div class="pt-1 pb-1 text-center">
-                <a [routerLink]="['/en/auth/reset-password']">{{'forgotPassword' | translate}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                <a [routerLink]="['/en/auth/login']">{{'accessYourAccount' | translate}}</a>
+            <div class="text-center">
+                <a [routerLink]="['../reset-password']">{{'forgotPassword' | translate}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <a [routerLink]="['../login']">{{'accessYourAccount' | translate}}</a>
             </div>
         </form>
     </mat-card-content>

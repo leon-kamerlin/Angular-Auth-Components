@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:lib": "ng build auth-components",
     "build:prod": "ng build --prod && npm run pack",
     "publish:ci": "npm run build:prod && npm publish dist/auth-components/*.tgz",
     "pack": "cd dist/auth-components && npm pack",

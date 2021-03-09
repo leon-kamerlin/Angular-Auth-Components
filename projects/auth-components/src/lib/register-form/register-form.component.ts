@@ -18,11 +18,8 @@ export class RegisterFormComponent implements OnInit {
     submitted: EventEmitter<RegisterData> = new EventEmitter<RegisterData>();
 
     constructor(private fb: FormBuilder) {
-    }
-
-    ngOnInit() {
-        const password = new FormControl('', Validators.required);
-        const confirmPassword = new FormControl('', CustomValidators.equalTo(password));
+        const password = new FormControl(null, Validators.required);
+        const confirmPassword = new FormControl(null, CustomValidators.equalTo(password));
 
 
         this.form = this.fb.group({
@@ -30,6 +27,10 @@ export class RegisterFormComponent implements OnInit {
             password,
             confirmPassword
         });
+    }
+
+    ngOnInit() {
+
     }
 
     get email(): FormControl {

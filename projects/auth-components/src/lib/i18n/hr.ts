@@ -1,16 +1,20 @@
 export const locale = {
     lang: 'hr',
     data: {
+        welcome: 'Dobrodošli',
+        yourEmailOrPasswordIsIncorrect: 'Vaši podaci su netočni',
         email: 'Email',
         emailIsRequired: 'Email je obavezan.',
         password: 'Zaporka',
         passwordIsRequired: 'Zaporka je obavezna.',
         stayLoggedIn: 'Ostani prijavljen',
         accessYourAccount: 'Pristupite svom računu.',
+        createYourAccount: 'Registrirajte se',
         login: 'Prijavite se',
         register: 'Registrirajte se',
         resetPassword: 'Resetirajte zaporku',
         forgotPassword: 'Zaboravljena zaporka?',
+        confirmPassword: 'Potvrdite zaporku',
         signupForNewAccount: 'Prijavite se za novi račun.',
         signInWithYourEmailToContinue: 'Prijavite se e-poštom da biste nastavili.',
         createAnAppAccountToContinue: 'Izradite račun aplikacije da biste nastavili.',
@@ -21,35 +25,5 @@ export const locale = {
         passwordsDoNotMatch: 'Zaporke se ne podudaraju.',
         iHaveReadAndAgreeToTheTermsOfService: 'Pročitao sam i prihvaćam uvjete pružanja usluge.',
         resetPasswordHeadline: 'Unesite svoju e-adresu i poslat ćemo vam upute za resetiranje zaporke.',
-
-
-        monday: 'Ponedjeljak',
-        tuesday: 'Utorak',
-        wednesday: 'Srijeda',
-        thursday: 'Četvrtak',
-        friday: 'Petak',
-        saturday: 'Subota',
-        sunday: 'Nedjelja',
-        availabilityFormHeadline : 'Postavite dane i vrijeme kada želite pružati zakazivanje svojih usluga.',
-        start: 'Početak',
-        end: 'Kraj',
-        startTimeIsBiggerThanEndTime: 'Vrijeme početka je veće od vremena završetka',
-        endTimeIsSmallerThanStartTime: 'Vrijeme završetka je manje od vremena početka',
-
-        home: 'Početna',
-        landingPage: 'Pošetna stranica',
-        goToConsole: 'Konzola',
-        businessRegistration: 'Registracija poduzeća',
-
-        previous: 'Prethodno',
-        next: 'Sljedeće',
-        submit: 'Pošalji',
-        notifications: 'Obavijesti',
-
-        dashboard: 'Nadzorna ploča',
-        calendar: 'Kalendar',
-        services: 'Usluge',
-        staff: 'Osoblje',
-        clients: 'Klijenti',
     }
 };

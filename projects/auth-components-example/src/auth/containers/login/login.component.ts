@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginData } from 'auth-components';
+import { AuthUser, WithAccessToken } from 'leon-angular-utils';
 
 @Component({
     selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     ngOnInit() {
     }
 
-    onLogIn(data: LoginData) {
-
+    onLoggedIn(authUserWithAccessToken: WithAccessToken<AuthUser>) {
+        localStorage.setItem('accessToken', authUserWithAccessToken.accessToken);
     }
 }

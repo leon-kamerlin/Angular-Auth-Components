@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    baseUrl: 'https://tenseconds-backend-dev-jve7ga6r2a-ew.a.run.app'
 };
 
 /*

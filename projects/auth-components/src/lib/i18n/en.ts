@@ -1,6 +1,8 @@
 export const locale = {
     lang: 'en',
     data: {
+        welcome: 'Welcome',
+        yourEmailOrPasswordIsIncorrect: 'Your email or password is incorrect',
         email: 'Email',
         emailIsRequired: 'Email is required.',
         password: 'Password',
@@ -10,7 +12,9 @@ export const locale = {
         register: 'Register',
         resetPassword: 'Reset password',
         forgotPassword: 'Forgot password?',
+        confirmPassword: 'Confirm password',
         accessYourAccount: 'Access your account.',
+        createYourAccount: 'Create your account',
         signupForNewAccount: 'Sign up for a new account.',
         signInWithYourEmailToContinue: 'Sign in with your email to continue.',
         createAnAppAccountToContinue: 'Create an app account to continue.',
@@ -21,34 +25,5 @@ export const locale = {
         passwordsDoNotMatch: 'Passwords do not match.',
         iHaveReadAndAgreeToTheTermsOfService: 'I have read and agree to the terms of service.',
         resetPasswordHeadline: 'Enter your email and we\'ll send you instructions on how to reset your password.',
-
-        monday: 'Monday',
-        tuesday: 'Tuesday',
-        wednesday: 'Wednesday',
-        thursday: 'Thursday',
-        friday: 'Friday',
-        saturday: 'Saturday',
-        sunday: 'Sunday',
-        availabilityFormHeadline : 'Set the days and times when you want to regularly offer appointments on your calendar.',
-        start: 'Start',
-        end: 'End',
-        startTimeIsBiggerThanEndTime: 'Start time is bigger than end time',
-        endTimeIsSmallerThanStartTime: 'End time is smaller than start time',
-
-        home: 'Home',
-        landingPage: 'Landing Page',
-        goToConsole: 'Go to Console',
-        businessRegistration: 'Business registration',
-
-        previous: 'Previous',
-        next: 'Next',
-        submit: 'Submit',
-        notifications: 'Notification',
-
-        dashboard: 'Dashboard',
-        calendar: 'Calendar',
-        services: 'Services',
-        staff: 'Staff',
-        clients: 'Clients',
     }
 };

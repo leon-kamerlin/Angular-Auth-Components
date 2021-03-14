@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegisterData } from 'auth-components';
+import { AuthUser } from 'leon-angular-utils';
 
 @Component({
     selector: 'app-register',
@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
     ngOnInit() {
     }
 
-    onRegister(data: RegisterData) {
-
+    onRegister(authUser: AuthUser) {
+        console.log('onRegister', authUser);
     }
 }

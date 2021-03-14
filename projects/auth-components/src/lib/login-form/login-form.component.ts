@@ -1,6 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { AuthUser, TranslationLoaderService, WithAccessToken } from 'leon-angular-utils';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ConnectionService } from 'ng-connection-service';
+import { TranslateService } from '@ngx-translate/core';
+import { locale as eng } from '../i18n/en';
+import { locale as cro } from '../i18n/hr';
+import { combineLatest, Observable, of } from 'rxjs';
+import { first, mergeMap, tap } from 'rxjs/operators';
 
 export interface LoginData {
     email: string;
@@ -15,14 +23,23 @@ export interface LoginData {
 })
 export class LoginFormComponent implements OnInit {
     form: FormGroup;
+    loading = false;
 
     @Output()
-    submitted: EventEmitter<LoginData> = new EventEmitter<LoginData>();
+    loggedIn: EventEmitter<WithAccessToken<AuthUser>> = new EventEmitter<WithAccessToken<AuthUser>>();
 
-    constructor(private fb: FormBuilder, private router: Router, private activatedRoute: ActivatedRoute) {
+    constructor(
+        private fb: FormBuilder,
+        private service: AuthService,
+        private snackBar: MatSnackBar,
+        private connectionService: ConnectionService,
+        private translate: TranslateService,
+        private translationLoaderService: TranslationLoaderService
+    ) {
+        translationLoaderService.loadTranslations(eng, cro);
         this.form = this.fb.group({
-            email: [null, Validators.compose([Validators.required])],
-            password: [null, Validators.compose([Validators.required])],
+            email: [null, Validators.compose([Validators.required, Validators.email])],
+            password: [null, Validators.compose([Validators.required, Validators.minLength(6)])],
             stayLoggedIn: [false, Validators.required]
         });
     }
@@ -40,5 +57,43 @@ export class LoginFormComponent implements OnInit {
 
     get stayLoggedIn(): FormControl {
         return this.form.get('stayLoggedIn') as FormControl;
+    }
+
+    get welcome$(): Observable<string> {
+        return this.translate.get('welcome').pipe(
+            first()
+        );
+    }
+
+    get failureMessage$(): Observable<string> {
+        return this.translate.get('yourEmailOrPasswordIsIncorrect').pipe(
+            first()
+        );
+    }
+
+
+    onSubmit(data: LoginData) {
+        this.loading = true;
+
+        return combineLatest([this.welcome$, this.failureMessage$]).pipe(
+            mergeMap(([welcome, message]) => {
+                return this.service.login(data).pipe(
+                    tap((res) => {
+                        this.loading = false;
+                        this.loggedIn.emit(res);
+                        this.openSnackBar(`${welcome} ${res.email}`, 'SUCCESS');
+                    }, (err) => {
+                        this.loading = false;
+                        this.openSnackBar(message, 'FAILURE');
+                    })
+                );
+            })
+        ).subscribe();
+    }
+
+    private openSnackBar(message: string, action?: string) {
+        return this.snackBar.open(message, action, {
+            duration: 3000,
+        });
     }
 }

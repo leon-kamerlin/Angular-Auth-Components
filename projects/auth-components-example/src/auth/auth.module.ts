@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FieldRequiredModule } from 'leon-angular-utils';
 import { LoginComponent } from './containers/login/login.component';
 import { AuthComponentsModule } from 'auth-components';
+import { InitializerModule } from '../app/initializer.module';
 
 
 const routes: Routes = [
@@ -33,11 +34,12 @@ const routes: Routes = [
     ],
     imports: [
         CommonModule,
+        AuthComponentsModule.forRoot({ apiBasePath: 'https://tenseconds-backend-dev-jve7ga6r2a-ew.a.run.app' }),
         RouterModule.forChild(routes),
         TranslateModule,
         ReactiveFormsModule,
-        AuthComponentsModule,
-        FieldRequiredModule
+        FieldRequiredModule,
+        InitializerModule
     ]
 })
 export class AuthModule {

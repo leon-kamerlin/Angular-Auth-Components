@@ -23,7 +23,7 @@ import { AuthService } from 'auth-components';
                             resolve(user);
                         }, (err) => {
                             console.log('APP_INITIALIZER', err);
-                            reject(err);
+                            resolve(err);
                         });
                     });
                 };

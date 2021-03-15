@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { AuthUser, WithAccessToken } from 'leon-angular-utils';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
     selector: 'app-login',
@@ -8,13 +9,16 @@ import { AuthUser, WithAccessToken } from 'leon-angular-utils';
 })
 export class LoginComponent implements OnInit {
 
-    constructor() {
+    constructor(@Inject(PLATFORM_ID) private platformId: any) {
     }
 
     ngOnInit() {
     }
 
     onLoggedIn(authUserWithAccessToken: WithAccessToken<AuthUser>) {
-        localStorage.setItem('accessToken', authUserWithAccessToken.accessToken);
+        if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem('accessToken', authUserWithAccessToken.accessToken);
+        }
+
     }
 }

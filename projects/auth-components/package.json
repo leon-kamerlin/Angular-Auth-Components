@@ -1,6 +1,6 @@
 {
     "name": "ng-auth-components",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "peerDependencies": {
         "@angular/common": "^11.2.3",
         "@angular/core": "^11.2.3",
@@ -10,7 +10,7 @@
         "@angular/forms": "~11.2.3",
         "@ngx-translate/core": "^13.0.0",
         "@ngx-translate/http-loader": "^6.0.0",
-        "leon-angular-utils": "^0.1.1",
+        "leon-angular-utils": "^0.1.2",
         "@angular/fire": "^6.1.4",
         "firebase": "^8.3.0",
         "ng2-validation": "^4.2.0",
